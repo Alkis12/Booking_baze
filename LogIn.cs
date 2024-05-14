@@ -23,6 +23,13 @@ namespace baze_booking
             InitializeComponent();
         }
 
+        private void registerLink_Click(object sender, EventArgs e)
+        {
+            Register registerForm = new Register();
+            registerForm.ShowDialog();
+            Close();
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             connection.Open();
@@ -30,39 +37,55 @@ namespace baze_booking
             email = mailTextBox.Text.Trim();
             password = passwordTextBox.Text.Trim();
 
-            string selectPassword = $"SELECT password FROM LogIn WHERE email = '{email}'";
-            SqlCommand passwordCommand = new SqlCommand(selectPassword, connection);
-
-            string userPassword = "";
-
-            try
+            if (email == "" || password == "")
             {
-                object result = passwordCommand.ExecuteScalar();
-                if (result != null)
+                if (label4.Text.Last() != '*')
                 {
-                    userPassword = result.ToString();
+                    label4.ForeColor = Color.Red;
+                    label4.Text += '*';
+                    label5.ForeColor = Color.Red;
+                    label5.Text += '*';
                 }
-                else
-                {
-                    Debug.WriteLine("No password found for the email: " + email);
-                }
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine("Exception occurred: " + ex.Message);
-            }
-
-            if (password == userPassword)
-            {
-                Form1.IsLogedIn = true;
-                this.Close();
             }
             else
             {
-                label4.ForeColor = Color.Red;
-                label4.Text += '*';
-                label5.ForeColor = Color.Red;
-                label5.Text += '*';
+                string selectPassword = $"SELECT password FROM LogIn WHERE email = '{email}'";
+                SqlCommand passwordCommand = new SqlCommand(selectPassword, connection);
+
+                string userPassword = "";
+
+                try
+                {
+                    object result = passwordCommand.ExecuteScalar();
+                    if (result != null)
+                    {
+                        userPassword = result.ToString();
+                    }
+                    else
+                    {
+                        Debug.WriteLine("No password found for the email: " + email);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine("Exception occurred: " + ex.Message);
+                }
+
+                if (password == userPassword)
+                {
+                    Form1.IsLogedIn = true;
+                    this.Close();
+                }
+                else
+                {
+                    if (label4.Text.Last() != '*')
+                    {
+                        label4.ForeColor = Color.Red;
+                        label4.Text += '*';
+                        label5.ForeColor = Color.Red;
+                        label5.Text += '*';
+                    }
+                }
             }
 
             connection.Close();
