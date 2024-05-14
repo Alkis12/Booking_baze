@@ -7,12 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using System.Diagnostics;
 
 namespace baze_booking
 {
     public partial class LogIn : Form
     {
-        private static string username, mail, password;
+        private string email, password;
+        private static string connectionString = "Data Source=DESKTOP-VURJ317;Initial Catalog=Booking;Integrated Security=True";
+        private SqlConnection connection = new SqlConnection(connectionString);
 
         public LogIn()
         {
@@ -21,7 +25,47 @@ namespace baze_booking
 
         private void button1_Click(object sender, EventArgs e)
         {
-            username = 
+            connection.Open();
+
+            email = mailTextBox.Text.Trim();
+            password = passwordTextBox.Text.Trim();
+
+            string selectPassword = $"SELECT password FROM LogIn WHERE email = '{email}'";
+            SqlCommand passwordCommand = new SqlCommand(selectPassword, connection);
+
+            string userPassword = "";
+
+            try
+            {
+                object result = passwordCommand.ExecuteScalar();
+                if (result != null)
+                {
+                    userPassword = result.ToString();
+                }
+                else
+                {
+                    Debug.WriteLine("No password found for the email: " + email);
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("Exception occurred: " + ex.Message);
+            }
+
+            if (password == userPassword)
+            {
+                Form1.IsLogedIn = true;
+                this.Close();
+            }
+            else
+            {
+                label4.ForeColor = Color.Red;
+                label4.Text += '*';
+                label5.ForeColor = Color.Red;
+                label5.Text += '*';
+            }
+
+            connection.Close();
         }
     }
 }

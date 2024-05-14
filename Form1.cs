@@ -12,6 +12,16 @@ namespace baze_booking
 {
     public partial class Form1 : Form
     {
+        private static bool isLogedIn;
+
+        public static bool IsLogedIn
+        {
+            get { return isLogedIn; }
+            set { isLogedIn = value; }
+        }
+
+
+
         public Form1()
         {
             InitializeComponent();
