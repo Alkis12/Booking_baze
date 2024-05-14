@@ -28,5 +28,11 @@ namespace baze_booking
             fr2.Show();
             Hide();
         }
+
+        private void LogInButton_Click(object sender, EventArgs e)
+        {
+            LogIn logInForm = new LogIn();
+            logInForm.ShowDialog();
+        }
     }
 }
