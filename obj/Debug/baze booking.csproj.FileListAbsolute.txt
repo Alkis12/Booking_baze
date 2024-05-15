@@ -9,3 +9,16 @@ C:\Users\arfa3\source\repos\baze booking\obj\Debug\baze booking.exe
 C:\Users\arfa3\source\repos\baze booking\obj\Debug\baze booking.pdb
 C:\Users\arfa3\source\repos\baze booking\bin\Debug\baze booking.pdb
 C:\Users\arfa3\source\repos\baze booking\obj\Debug\baze_booking.Form2.resources
+C:\Users\aleksa\Projects\Booking_baze\bin\Debug\baze booking.exe.config
+C:\Users\aleksa\Projects\Booking_baze\bin\Debug\baze booking.exe
+C:\Users\aleksa\Projects\Booking_baze\bin\Debug\baze booking.pdb
+C:\Users\aleksa\Projects\Booking_baze\obj\Debug\baze booking.csproj.AssemblyReference.cache
+C:\Users\aleksa\Projects\Booking_baze\obj\Debug\baze_booking.Form1.resources
+C:\Users\aleksa\Projects\Booking_baze\obj\Debug\baze_booking.Form2.resources
+C:\Users\aleksa\Projects\Booking_baze\obj\Debug\baze_booking.Properties.Resources.resources
+C:\Users\aleksa\Projects\Booking_baze\obj\Debug\baze booking.csproj.GenerateResource.cache
+C:\Users\aleksa\Projects\Booking_baze\obj\Debug\baze booking.csproj.CoreCompileInputs.cache
+C:\Users\aleksa\Projects\Booking_baze\obj\Debug\baze booking.exe
+C:\Users\aleksa\Projects\Booking_baze\obj\Debug\baze booking.pdb
+C:\Users\aleksa\Projects\Booking_baze\obj\Debug\baze_booking.LogIn.resources
+C:\Users\aleksa\Projects\Booking_baze\obj\Debug\baze_booking.Register.resources
