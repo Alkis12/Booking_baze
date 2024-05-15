@@ -42,9 +42,8 @@ namespace baze_booking
             password = passwordTextBox.Text.Trim();
             bool passwordValid = false;
 
-            if (!Regex.IsMatch(mailTextBox.Text, @"^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$"))
+            if (!Regex.IsMatch(email, @"^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$"))
             {
-                Debug.WriteLine("dasd");
                 if (!label4.Text.EndsWith("*"))
                 {
                     label4.ForeColor = Color.Red;
