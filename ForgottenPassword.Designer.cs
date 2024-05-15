@@ -1,6 +1,6 @@
 ﻿namespace baze_booking
 {
-    partial class Register
+    partial class ForgottenPassword
     {
         /// <summary>
         /// Required designer variable.
@@ -34,8 +34,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.passwordTextBox = new System.Windows.Forms.TextBox();
             this.mailTextBox = new System.Windows.Forms.TextBox();
-            this.registerLink = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel.SuspendLayout();
             this.SuspendLayout();
@@ -47,8 +45,6 @@
             this.panel.Controls.Add(this.label4);
             this.panel.Controls.Add(this.passwordTextBox);
             this.panel.Controls.Add(this.mailTextBox);
-            this.panel.Controls.Add(this.registerLink);
-            this.panel.Controls.Add(this.label2);
             this.panel.Controls.Add(this.label1);
             this.panel.Location = new System.Drawing.Point(39, 22);
             this.panel.Name = "panel";
@@ -65,7 +61,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(350, 80);
             this.button1.TabIndex = 2;
-            this.button1.Text = "Registruj se";
+            this.button1.Text = "Prijavi se";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -106,46 +102,25 @@
             this.mailTextBox.TabIndex = 0;
             this.mailTextBox.Text = "\r\n";
             // 
-            // registerLink
-            // 
-            this.registerLink.AutoSize = true;
-            this.registerLink.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.registerLink.ForeColor = System.Drawing.Color.Navy;
-            this.registerLink.Location = new System.Drawing.Point(205, 52);
-            this.registerLink.Name = "registerLink";
-            this.registerLink.Size = new System.Drawing.Size(84, 20);
-            this.registerLink.TabIndex = 2;
-            this.registerLink.Text = "Prijavite se";
-            this.registerLink.Click += new System.EventHandler(this.registerLink_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(5, 52);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(194, 20);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Već imate Booking nalog?\r\n";
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 11);
+            this.label1.Location = new System.Drawing.Point(3, 31);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(333, 32);
+            this.label1.Size = new System.Drawing.Size(246, 32);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Kreirajte Booking nalog";
+            this.label1.Text = "Zamenite lozinku";
             // 
-            // Register
+            // ForgottenPassword
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(478, 544);
             this.Controls.Add(this.panel);
-            this.Name = "Register";
+            this.Name = "ForgottenPassword";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Registracija";
+            this.Text = "ForgottenPassword";
             this.panel.ResumeLayout(false);
             this.panel.PerformLayout();
             this.ResumeLayout(false);
@@ -160,8 +135,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox passwordTextBox;
         private System.Windows.Forms.TextBox mailTextBox;
-        private System.Windows.Forms.Label registerLink;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
     }
 }

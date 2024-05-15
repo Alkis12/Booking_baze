@@ -51,6 +51,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BookingDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="ForgottenPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ForgottenPassword.Designer.cs">
+      <DependentUpon>ForgottenPassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +83,9 @@
     <Compile Include="Register.Designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ForgottenPassword.resx">
+      <DependentUpon>ForgottenPassword.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

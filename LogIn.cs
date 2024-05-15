@@ -30,6 +30,11 @@ namespace baze_booking
             Close();
         }
 
+        private void forgottenPasswordLink_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             connection.Open();

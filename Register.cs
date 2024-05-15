@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -41,8 +42,9 @@ namespace baze_booking
             password = passwordTextBox.Text.Trim();
             bool passwordValid = false;
 
-            if (!Regex.IsMatch(mailTextBox.Text, @"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$"))
+            if (!Regex.IsMatch(mailTextBox.Text, @"^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$"))
             {
+                Debug.WriteLine("dasd");
                 if (!label4.Text.EndsWith("*"))
                 {
                     label4.ForeColor = Color.Red;
@@ -52,6 +54,11 @@ namespace baze_booking
             else
             {
                 emailValid = true;
+                if(label4.ForeColor == Color.Red)
+                {
+                    label4.ForeColor = Color.Black;
+                    label4.Text = label4.Text.Remove(label4.Text.Length - 1);
+                }
             }
 
             if ((password.Length < 7 || password.Length > 7) || password.Where(x=>!char.IsLetterOrDigit(x)).Count() != 6 || !password.Any(x=>x=='7') || password.Distinct().Count() != 7) 
@@ -65,6 +72,11 @@ namespace baze_booking
             else
             {
                 passwordValid = true;
+                if (label5.ForeColor == Color.Red)
+                {
+                    label5.ForeColor = Color.Black;
+                    label5.Text = label5.Text.Remove(label5.Text.Length - 1);
+                }
             }
 
             if(emailValid && passwordValid) 
