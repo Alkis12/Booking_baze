@@ -32,9 +32,9 @@ namespace baze_booking
             email = mailTextBox.Text.Trim();
             password = passwordTextBox.Text.Trim();
 
-            if (!Regex.IsMatch(mailTextBox.Text, @"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$"))
+            if (!Regex.IsMatch(mailTextBox.Text, @"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$"))
             {
-                if (label4.Text.Last() != '*')
+                if (!label4.Text.EndsWith("*"))
                 {
                     label4.ForeColor = Color.Red;
                     label4.Text += '*';
