@@ -32,7 +32,9 @@ namespace baze_booking
 
         private void forgottenPasswordLink_Click(object sender, EventArgs e)
         {
-
+            ForgottenPassword forgottenPasswordForm = new ForgottenPassword();
+            forgottenPasswordForm.ShowDialog();
+            Close();
         }
 
         private void button1_Click(object sender, EventArgs e)

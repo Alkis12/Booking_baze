@@ -61,7 +61,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(350, 80);
             this.button1.TabIndex = 2;
-            this.button1.Text = "Prijavi se";
+            this.button1.Text = "Zameni lozinku";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -120,7 +120,7 @@
             this.Controls.Add(this.panel);
             this.Name = "ForgottenPassword";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "ForgottenPassword";
+            this.Text = "Zamena lozinke";
             this.panel.ResumeLayout(false);
             this.panel.PerformLayout();
             this.ResumeLayout(false);
