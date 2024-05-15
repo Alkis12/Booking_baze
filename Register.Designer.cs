@@ -116,6 +116,7 @@
             this.registerLink.Size = new System.Drawing.Size(84, 20);
             this.registerLink.TabIndex = 2;
             this.registerLink.Text = "Prijavite se";
+            this.registerLink.Click += new System.EventHandler(this.registerLink_Click);
             // 
             // label2
             // 

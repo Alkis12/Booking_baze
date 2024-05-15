@@ -25,12 +25,21 @@ namespace baze_booking
             InitializeComponent();
         }
 
+        private void registerLink_Click(object sender, EventArgs e)
+        {
+            LogIn logInForm = new LogIn();
+            logInForm.ShowDialog();
+            Close();
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             connection.Open();
 
             email = mailTextBox.Text.Trim();
+            bool emailValid = false;
             password = passwordTextBox.Text.Trim();
+            bool passwordValid = false;
 
             if (!Regex.IsMatch(mailTextBox.Text, @"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$"))
             {
@@ -39,6 +48,10 @@ namespace baze_booking
                     label4.ForeColor = Color.Red;
                     label4.Text += '*';
                 }
+            }
+            else
+            {
+                emailValid = true;
             }
 
             if ((password.Length < 7 || password.Length > 7) || password.Where(x=>!char.IsLetterOrDigit(x)).Count() != 6 || !password.Any(x=>x=='7') || password.Distinct().Count() != 7) 
@@ -49,8 +62,18 @@ namespace baze_booking
                     label5.Text += '*';
                 }
             }
+            else
+            {
+                passwordValid = true;
+            }
 
-
+            if(emailValid && passwordValid) 
+            {
+                string insert = $"INSERT INTO LogIn VALUES('{email}', '{password}')";
+                SqlCommand insertCommand = new SqlCommand(insert, connection);
+                insertCommand.ExecuteNonQuery();
+                Close();
+            }
 
             connection.Close();
         }
