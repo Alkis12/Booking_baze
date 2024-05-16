@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace baze_booking
@@ -52,24 +45,46 @@ namespace baze_booking
 
         private void IsLogedInValueChanged(bool isLogedIn)
         {
-            if(isLogedIn)
+            if (isLogedIn)
             {
+                Debug.WriteLine("dasd11111");
                 logInButton.Visible = false;
                 logInButton.Enabled = false;
                 userIcon.Visible = true;
             }
             else
             {
+                Debug.WriteLine("dasd");
                 userIcon.Visible = false;
-                logInButton.Visible = true;
                 logInButton.Enabled = true;
+                logInButton.Visible = true;
+                LogIn.email = "";
+                LogIn.password = "";
             }
-
         }
 
         private void userIcon_Click(object sender, EventArgs e)
         {
-            panel1.Visible = true;
+            if (!panel1.Visible)
+            {
+                panel1.Visible = true;
+                mailPanel1Lbl.Text = $"E-mail: {LogIn.email}";
+                passwordPanel1Lbl.Text = $"Lozinka: {LogIn.password}";
+            }
+            else
+            {
+                mailPanel1Lbl.Text = $"E-mail:";
+                passwordPanel1Lbl.Text = $"Lozinka:";
+                panel1.Visible = false;
+            }
+        }
+
+        private void signOut_Click(object sender, EventArgs e)
+        {
+            IsLogedIn = false;
+            mailPanel1Lbl.Text = $"E-mail:";
+            passwordPanel1Lbl.Text = $"Lozinka:";
+            panel1.Visible = false;
         }
     }
 }

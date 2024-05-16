@@ -32,10 +32,10 @@
             this.button1 = new System.Windows.Forms.Button();
             this.logInButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.mailPanel1Lbl = new System.Windows.Forms.Label();
-            this.passwordPanel1Lbl = new System.Windows.Forms.Label();
             this.signOut = new System.Windows.Forms.Button();
-            this.userIcon = new System.Windows.Forms.Button();
+            this.passwordPanel1Lbl = new System.Windows.Forms.Label();
+            this.mailPanel1Lbl = new System.Windows.Forms.Label();
+            this.userIcon = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,7 +48,6 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // logInButton
             // 
@@ -70,20 +69,21 @@
             this.panel1.Controls.Add(this.signOut);
             this.panel1.Controls.Add(this.passwordPanel1Lbl);
             this.panel1.Controls.Add(this.mailPanel1Lbl);
-            this.panel1.Location = new System.Drawing.Point(688, 78);
+            this.panel1.Location = new System.Drawing.Point(605, 78);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 114);
+            this.panel1.Size = new System.Drawing.Size(283, 137);
             this.panel1.TabIndex = 3;
             this.panel1.Visible = false;
             // 
-            // mailPanel1Lbl
+            // signOut
             // 
-            this.mailPanel1Lbl.AutoSize = true;
-            this.mailPanel1Lbl.Location = new System.Drawing.Point(7, 12);
-            this.mailPanel1Lbl.Name = "mailPanel1Lbl";
-            this.mailPanel1Lbl.Size = new System.Drawing.Size(57, 20);
-            this.mailPanel1Lbl.TabIndex = 0;
-            this.mailPanel1Lbl.Text = "E-mail:";
+            this.signOut.Location = new System.Drawing.Point(88, 86);
+            this.signOut.Name = "signOut";
+            this.signOut.Size = new System.Drawing.Size(109, 37);
+            this.signOut.TabIndex = 2;
+            this.signOut.Text = "Odjavi se";
+            this.signOut.UseVisualStyleBackColor = true;
+            this.signOut.Click += new System.EventHandler(this.signOut_Click);
             // 
             // passwordPanel1Lbl
             // 
@@ -94,26 +94,25 @@
             this.passwordPanel1Lbl.TabIndex = 1;
             this.passwordPanel1Lbl.Text = "Lozinka:";
             // 
-            // signOut
+            // mailPanel1Lbl
             // 
-            this.signOut.Location = new System.Drawing.Point(59, 79);
-            this.signOut.Name = "signOut";
-            this.signOut.Size = new System.Drawing.Size(81, 32);
-            this.signOut.TabIndex = 2;
-            this.signOut.Text = "Odjavi se";
-            this.signOut.UseVisualStyleBackColor = true;
+            this.mailPanel1Lbl.AutoSize = true;
+            this.mailPanel1Lbl.Location = new System.Drawing.Point(7, 12);
+            this.mailPanel1Lbl.Name = "mailPanel1Lbl";
+            this.mailPanel1Lbl.Size = new System.Drawing.Size(57, 20);
+            this.mailPanel1Lbl.TabIndex = 0;
+            this.mailPanel1Lbl.Text = "E-mail:";
             // 
             // userIcon
             // 
-            this.userIcon.BackColor = System.Drawing.SystemColors.Control;
+            this.userIcon.BackColor = System.Drawing.Color.Transparent;
             this.userIcon.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("userIcon.BackgroundImage")));
             this.userIcon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.userIcon.Cursor = System.Windows.Forms.Cursors.Hand;
             this.userIcon.Location = new System.Drawing.Point(828, 12);
             this.userIcon.Name = "userIcon";
             this.userIcon.Size = new System.Drawing.Size(60, 60);
-            this.userIcon.TabIndex = 4;
-            this.userIcon.UseVisualStyleBackColor = false;
+            this.userIcon.TabIndex = 5;
             this.userIcon.Visible = false;
             this.userIcon.Click += new System.EventHandler(this.userIcon_Click);
             // 
@@ -143,7 +142,7 @@
         private System.Windows.Forms.Button signOut;
         private System.Windows.Forms.Label passwordPanel1Lbl;
         private System.Windows.Forms.Label mailPanel1Lbl;
-        private System.Windows.Forms.Button userIcon;
+        private System.Windows.Forms.Panel userIcon;
     }
 }
 

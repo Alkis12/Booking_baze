@@ -1,17 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
-using System.Reflection.Emit;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace baze_booking
 {
@@ -83,6 +76,9 @@ namespace baze_booking
                 string insert = $"INSERT INTO LogIn VALUES('{email}', '{password}')";
                 SqlCommand insertCommand = new SqlCommand(insert, connection);
                 insertCommand.ExecuteNonQuery();
+                Form1.IsLogedIn = true;
+                LogIn.email = email;
+                LogIn.password = password;
                 Close();
             }
 
