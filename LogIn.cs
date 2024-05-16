@@ -14,7 +14,7 @@ namespace baze_booking
 {
     public partial class LogIn : Form
     {
-        private string email, password;
+        public static string email, password;
         private static string connectionString = "Data Source=DESKTOP-VURJ317;Initial Catalog=Booking;Integrated Security=True";
         private SqlConnection connection = new SqlConnection(connectionString);
 
@@ -27,6 +27,13 @@ namespace baze_booking
         {
             Register registerForm = new Register();
             registerForm.ShowDialog();
+            Close();
+        }
+
+        private void forgottenPasswordLink_Click(object sender, EventArgs e)
+        {
+            ForgottenPassword forgottenPasswordForm = new ForgottenPassword();
+            forgottenPasswordForm.ShowDialog();
             Close();
         }
 

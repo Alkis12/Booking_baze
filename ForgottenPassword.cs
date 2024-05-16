@@ -1,29 +1,26 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace baze_booking
 {
-    public partial class Register : Form
+    public partial class ForgottenPassword : Form
     {
         private string email, password;
         private static string connectionString = "Data Source=DESKTOP-VURJ317;Initial Catalog=Booking;Integrated Security=True";
         private SqlConnection connection = new SqlConnection(connectionString);
 
-        public Register()
+        public ForgottenPassword()
         {
             InitializeComponent();
-        }
-
-        private void registerLink_Click(object sender, EventArgs e)
-        {
-            LogIn logInForm = new LogIn();
-            logInForm.ShowDialog();
-            Close();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -46,14 +43,14 @@ namespace baze_booking
             else
             {
                 emailValid = true;
-                if(label4.ForeColor == Color.Red)
+                if (label4.ForeColor == Color.Red)
                 {
                     label4.ForeColor = Color.Black;
                     label4.Text = label4.Text.Remove(label4.Text.Length - 1);
                 }
             }
 
-            if ((password.Length < 7 || password.Length > 7) || password.Where(x=>!char.IsLetterOrDigit(x)).Count() != 6 || !password.Any(x=>x=='7') || password.Distinct().Count() != 7) 
+            if ((password.Length < 7 || password.Length > 7) || password.Where(x => !char.IsLetterOrDigit(x)).Count() != 6 || !password.Any(x => x == '7') || password.Distinct().Count() != 7)
             {
                 if (label5.Text.Last() != '*')
                 {
@@ -71,14 +68,11 @@ namespace baze_booking
                 }
             }
 
-            if(emailValid && passwordValid) 
+            if (emailValid && passwordValid)
             {
-                string insert = $"INSERT INTO LogIn VALUES('{email}', '{password}')";
-                SqlCommand insertCommand = new SqlCommand(insert, connection);
-                insertCommand.ExecuteNonQuery();
-                Form1.IsLogedIn = true;
-                LogIn.email = email;
-                LogIn.password = password;
+                string insert = $"UPDATE LogIn SET password = '{password}' WHERE email = '{email}'";
+                SqlCommand updateCommand = new SqlCommand(insert, connection);
+                updateCommand.ExecuteNonQuery();
                 Close();
             }
 

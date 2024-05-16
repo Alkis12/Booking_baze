@@ -81,6 +81,7 @@
             this.forgottenPasswordLink.Size = new System.Drawing.Size(164, 20);
             this.forgottenPasswordLink.TabIndex = 5;
             this.forgottenPasswordLink.Text = "Zaboravili ste lozinku?";
+            this.forgottenPasswordLink.Click += new System.EventHandler(this.forgottenPasswordLink_Click);
             // 
             // label5
             // 

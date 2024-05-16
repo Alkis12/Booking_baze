@@ -22,3 +22,4 @@ C:\Users\aleksa\Projects\Booking_baze\obj\Debug\baze booking.exe
 C:\Users\aleksa\Projects\Booking_baze\obj\Debug\baze booking.pdb
 C:\Users\aleksa\Projects\Booking_baze\obj\Debug\baze_booking.LogIn.resources
 C:\Users\aleksa\Projects\Booking_baze\obj\Debug\baze_booking.Register.resources
+C:\Users\aleksa\Projects\Booking_baze\obj\Debug\baze_booking.ForgottenPassword.resources
